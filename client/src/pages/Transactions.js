@@ -1,52 +1,42 @@
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useEffect } from "react";
+import { deleteTransaction, getTransactions } from "../actions/transactions";
+import DeleteIcon from "@material-ui/icons/Delete";
+
 function Transactions() {
+  const dispatch = useDispatch();
+  const transactions = useSelector((state) => state.transactions);
+
+  useEffect(() => {
+    dispatch(getTransactions());
+  }, []);
+
   return (
     <div className="App-header">
       <h1 className="insightsTitle">Insights</h1>
       <div className="cards">
         <div className="card1">
-          <h1>Income</h1>
+          <h1>Transactions</h1>
           <table>
             <tr>
               <th>Category</th>
               <th>Amount</th>
+              <th>Type</th>
+              <th>Delete?</th>
             </tr>
-            <tr>
-              <td>Housing</td>
-              <td>$1</td>
-            </tr>
-            <tr>
-              <td>Food</td>
-              <td>$2</td>
-            </tr>
-            <tr>
-              <td>Clothing</td>
-              <td>$3</td>
-            </tr>
-            <tr>
-              <td>Business</td>
-              <td>$4</td>
-            </tr>
-          </table>
-        </div>
-        <div className="card2">
-          <h1>Expenses</h1>
-          <table>
-            <tr>
-              <th>Category</th>
-              <th>Amount</th>
-            </tr>
-            <tr>
-              <td>Investment</td>
-              <td>$1</td>
-            </tr>
-            <tr>
-              <td>Salary</td>
-              <td>$2</td>
-            </tr>
-            <tr>
-              <td>Deposit</td>
-              <td>$3</td>
-            </tr>
+            {transactions.map((trans) => (
+              <tr>
+                <td>{trans.category}</td>
+                <td>{trans.amount}</td>
+                <td>{trans.type}</td>
+                <td>
+                  <DeleteIcon
+                    onClick={() => dispatch(deleteTransaction(trans._id))}
+                  />
+                </td>
+              </tr>
+            ))}
           </table>
         </div>
       </div>

@@ -123,7 +123,15 @@ function SpeechToText() {
         {/* <h1>Record</h1> */}
         {/* <h6>Begin recording </h6> */}
         {/* {renderRecordBox()} */}
-        <div className="box">
+
+        <div className="box1">
+          <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
+          {/* {savedNotes.map((n) => (
+            <p key={n}>{n}</p>
+          ))} */}
+        </div>
+
+        <div className="box2">
           <button onClick={() => setIsListening((isListening) => true)}>
            Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
           </button>
@@ -133,12 +141,6 @@ function SpeechToText() {
           <button onClick={handleSaveNote} disabled={!note}>
             Done <CheckIcon />
           </button>
-        </div>
-        <div className="box">
-          <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
-          {/* {savedNotes.map((n) => (
-            <p key={n}>{n}</p>
-          ))} */}
         </div>
         <div className="recordingNotes">{note}</div>
         <form className="stt-form">

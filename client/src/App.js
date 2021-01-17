@@ -1,7 +1,7 @@
 import "./App.css";
 import Nav from "./global/Nav";
 import SpeechToText from "./STT/SpeechToText";
-import { About, Landing, Transactions, Insights } from "./pages/index";
+import { Landing, Transactions, Insights } from "./pages/index";
 import { Route, Switch } from "react-router-dom";
 
 function App() {
@@ -11,7 +11,6 @@ function App() {
       <Switch>
         <Route exact component={Landing} path="/" />
         <Route exact component={SpeechToText} path="/record" />
-        <Route exact component={About} path="/about" />
         <Route exact component={Transactions} path="/transactions" />
         <Route exact component={Insights} path="/insights" />
       </Switch>

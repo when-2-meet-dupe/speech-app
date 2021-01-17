@@ -14,9 +14,6 @@ function Nav() {
         <Link className="navItem" to="/record" onClick={handleClick}>
           Record
         </Link>
-        <Link className="navItem" to="/about" onClick={handleClick}>
-          About
-        </Link>
         <Link className="navItem" to="/transactions" onClick={handleClick}>
           Transactions
         </Link>

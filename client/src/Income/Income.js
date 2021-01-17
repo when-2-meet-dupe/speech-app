@@ -1,7 +1,6 @@
 import { Fragment } from "react";
 import styled from "styled-components";
 import { TextField, Button, Card, IconButton } from "@material-ui/core";
-import SendIcon from "@material-ui/icons/Send";
 import StopIcon from "@material-ui/icons/Stop";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
@@ -13,7 +12,8 @@ const LightTextField = styled(TextField)`
   }
 `;
 const RecordCard = styled(Card)`
-  padding-right: 20px;
+  display: flex;
+  align-items: center;
   margin-bottom: 50px;
 `;
 
@@ -31,9 +31,11 @@ const Income = () => {
       <IconButton>
         <StopIcon />
       </IconButton>
-      <Button variant="contained" color="green" endIcon={<SendIcon />}>
-        Send
-      </Button>
+      <TextField
+        id="outlined-basic"
+        placeholder="You said..."
+        variant="outlined"
+      />
     </RecordCard>
   );
 

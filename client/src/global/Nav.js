@@ -7,49 +7,53 @@ import Insights from "../pages/Insights";
 import { Route, BrowserRouter as Router, Switch, Link } from "react-router-dom";
 
 export default function Nav() {
-
-    return(
-        <>
-        <Router>
+  return (
+    <>
+      <Router>
         <div className="sticky">
-            <div className="navBarContainer">
-                <div className="navBar">
-                    <ul>
-                        <div className="left">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/contact">Contact</Link></li>
-                            <li><Link to="/transactions">Transactions</Link></li>
-                            <li><Link to="/insights">Insights</Link></li>
-                        </div>
-                        <div className="right">
-                            {/* <li>Record Now</li> */}
-                        </div>
-
-
-                    </ul>
+          <div className="navBarContainer">
+            <div className="navBar">
+              <ul>
+                <div className="left">
+                  <li>
+                    <Link to="/">Home</Link>
+                  </li>
+                  <li>
+                    <Link to="/about">About</Link>
+                  </li>
+                  <li>
+                    <Link to="/contact">Contact</Link>
+                  </li>
+                  <li>
+                    <Link to="/transactions">Transactions</Link>
+                  </li>
+                  <li>
+                    <Link to="/insights">Insights</Link>
+                  </li>
                 </div>
+                <div className="right">{/* <li>Record Now</li> */}</div>
+              </ul>
             </div>
+          </div>
         </div>
         <Switch>
-            <Route exact path="/">
-                <Home />
-            </Route>
-            <Route exact path="/about">
-                <About />
-            </Route>
-            <Route exact path="/contact">
-                <Contact />
-            </Route>
-            <Route exact path="/transactions">
-                <Transactions />
-            </Route>
-            <Route exact path="/insights">
-                <Insights />
-            </Route>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/about">
+            <About />
+          </Route>
+          <Route exact path="/contact">
+            <Contact />
+          </Route>
+          <Route exact path="/transactions">
+            <Transactions />
+          </Route>
+          <Route exact path="/insights">
+            <Insights />
+          </Route>
         </Switch>
-        </Router>
-        </>
-    )
-
-} 
+      </Router>
+    </>
+  );
+}

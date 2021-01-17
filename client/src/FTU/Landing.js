@@ -14,7 +14,7 @@ const BackgroundImage = styled.div`
 `;
 
 const Container = styled.div`
-  margin-left: 8em;
+  margin-left: 6em;
 `;
 
 const Title = styled.h1`

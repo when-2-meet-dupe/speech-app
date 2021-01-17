@@ -114,10 +114,10 @@ function SpeechToText() {
             title="For example, you can say '$100 income business'."
             placement="top-start"
           >
-            <a>Begin recording your income or expenses. </a>
-          </Tooltip>
+            <a>Begin recording your income or expenses.</a>
+          </Tooltip>{" "}
           Once you're done, press stop followed by the checkmark button.
-        </p>{" "}
+        </p>
       </>
     );
   };

@@ -1,40 +1,43 @@
-import { Fragment } from "react";
-import Image from "material-ui-image";
 import styled from "styled-components";
 import landing from "../assets/landing.svg";
 import { Button } from "@material-ui/core";
 
+const BackgroundImage = styled.div`
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-image: url(${landing});
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  bottom: 20px;
+  right: 100px;
+`;
+
 const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin-left: 12em;
 `;
-const Column = styled.div`
-  flex: 50%;
-  align-items: center;
-`;
+
 const Title = styled.h1`
-  font-size: 80px;
+  font-size: 5em;
+  margin-top: 2em;
+  margin-bottom: 10px;
 `;
 
 const PrimaryButton = styled(Button)`
   color: white !important;
-  font-size: 25px !important;
+  font-size: 1.5em !important;
   font-weight: 700 !important;
   text-tranform: none !important;
   background-color: #00bfa6 !important;
 `;
 
-const LandingPage = () => (
-  <Container>
-    <Column>
-      <Title className="column">Say Your Price</Title>
+const Landing = () => (
+  <BackgroundImage>
+    <Container>
+      <Title>Say Your Price</Title>
       <PrimaryButton size="large">Get started</PrimaryButton>
-    </Column>
-    <Column>
-      <Image src={landing} />
-    </Column>
-  </Container>
+    </Container>
+  </BackgroundImage>
 );
-export default LandingPage;
+
+export default Landing;

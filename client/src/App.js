@@ -1,10 +1,5 @@
-import "./App.css";
 import Nav from "./global/Nav";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Landing from "./FTU/Landing";
-import Contact from "./pages/Contact";
-import Transactions from "./pages/Transactions";
+import { Home, About, Landing, Contact, Transactions } from "./pages/index";
 import { Route, Switch } from "react-router-dom";
 
 function App() {

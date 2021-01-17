@@ -7,6 +7,6 @@ export default (transactions = [], action) => {
     case "CREATE":
       return [...transactions, action.payload];
     default:
-      return trans;
+      return transactions;
   }
 };

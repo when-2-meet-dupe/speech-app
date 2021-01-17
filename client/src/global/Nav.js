@@ -5,7 +5,7 @@ function Nav() {
     <div className="sticky">
       <div className="navBar">
         <Link className="navItem" to="/home">
-          Home
+          Record
         </Link>
         <Link className="navItem" to="/about">
           About

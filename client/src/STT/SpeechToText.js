@@ -112,7 +112,7 @@ function SpeechToText() {
         <p>
           <Tooltip
             title="For example, you can say '$100 income business'."
-            placement="top-start"
+            placement="left"
           >
             <a>Begin recording your income or expenses.</a>
           </Tooltip>{" "}
@@ -123,7 +123,7 @@ function SpeechToText() {
   };
 
   const renderRecordBox = () => (
-    <div className="box">
+    <div className="box2">
       <button onClick={() => setIsListening((isListening) => true)}>
         <FiberManualRecordIcon fontSize="medium" color="secondary" />
       </button>
@@ -142,14 +142,15 @@ function SpeechToText() {
 
   const renderForm = () => (
     <form>
+      You said...
       <div>
         {savedNotes.map((n) => (
           <p key={n}>{n}</p>
         ))}
       </div>
-      <div className="curr-amount">${amount}</div>
-      <div className="curr-type">${type}</div>
-      <div className="curr-cat">${category}</div>
+      <div className="curr-amount">Amount: ${amount}</div>
+      <div className="curr-type">Type: {type}</div>
+      <div className="curr-cat">Category: {category}</div>
       <div className="submitButton">
         <PrimaryButton value="Submit" onClick={handleSubmit}>
           Submit
@@ -167,50 +168,11 @@ function SpeechToText() {
 
   return (
     <div className="container">
-      <div className="box2">
-        {/* <button onClick={() => setIsListening((isListening) => true)}>
-          Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
-        </button>
-        <button onClick={() => setIsListening((isListening) => false)}>
-          Stop <StopIcon />
-        </button>
-        <button onClick={handleSaveNote} disabled={!note}>
-          Done <CheckIcon />
-        </button>
-        <button onClick={handleUndo}>
-          Undo <UndoIcon />
-        </button>
-        <h1>Record</h1>
-        <h6>Begin recording </h6> */}
-        {/* {renderRecordBox()} */}
-        {/* <div className="box">
-          {savedNotes.map((n) => (
-            <p key={n}>{n}</p>
-          ))}
-        </div>
-        <div className="recordingNotes">{note}</div>
-        <form className="stt-form">
-          <div className="curr-amount">${amount}</div>
-          <div className="curr-type">${type}</div>
-          <div className="curr-cat">${category}</div>
-          <div>
-            <div className="submitRecordingHolder">
-              <button // Input for the submit button
-                type="submit"
-                value="Submit"
-                onClick={handleSubmit}
-              >
-                Submit
-              </button>
-            </div>
-          </div>
-        </form> */}
-        <div className="flex-left">
-          {renderHeader()}
-          {renderRecordBox()}
-          {renderForm()}
-          <img alt="transfer money" className="icon" src={speechToText} />
-        </div>
+      <div className="flex-left">
+        {renderHeader()}
+        {renderRecordBox()}
+        {renderForm()}
+        <img alt="transfer money" className="icon" src={speechToText} />
       </div>
     </div>
   );

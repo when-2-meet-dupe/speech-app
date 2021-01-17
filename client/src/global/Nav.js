@@ -20,6 +20,7 @@ function Nav() {
         <Link className="navItem" to="/insights" onClick={handleClick}>
           Insights
         </Link>
+        <a className="githubLogo" href="https://github.com/when-2-meet-dupe/speech-app"><i class="fab fa-github"></i></a>
       </div>
     </div>
   );

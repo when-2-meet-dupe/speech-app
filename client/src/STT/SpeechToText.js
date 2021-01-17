@@ -108,50 +108,43 @@ function SpeechToText() {
   } else {
     volumePic = <i class="fas fa-microphone-slash"></i>;
   }
-  // const renderRecordBox = () => (
-  //   <div className="box">
-  //     <button onClick={() => setIsListening((isListening) => true)}>
-  //       <FiberManualRecordIcon fontSize="medium" color="secondary" />
-  //     </button>
-  //     <button onClick={() => setIsListening((isListening) => false)}>
-  //       <StopIcon />
-  //     </button>
-  //     <button onClick={handleSaveNote} disabled={!note}>
-  //       <CheckIcon />
-  //     </button>
-  //     <p>{note}</p>
-  //   </div>
-  // );
+  const renderRecordBox = () => (
+    <div className="box">
+      <button onClick={() => setIsListening((isListening) => true)}>
+        <FiberManualRecordIcon fontSize="medium" color="secondary" />
+      </button>
+      <button onClick={() => setIsListening((isListening) => false)}>
+        <StopIcon />
+      </button>
+      <button onClick={handleSaveNote} disabled={!note}>
+        <CheckIcon />
+      </button>
+      <p>{note}</p>
+    </div>
+  );
 
   return (
-    <>
-      <div className="container">
-        {/* <h1>Record</h1> */}
-        {/* <h6>Begin recording </h6> */}
+    <div className="container">
+      <div className="box2">
+        <button onClick={() => setIsListening((isListening) => true)}>
+          Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
+        </button>
+        <button onClick={() => setIsListening((isListening) => false)}>
+          Stop <StopIcon />
+        </button>
+        <button onClick={handleSaveNote} disabled={!note}>
+          Done <CheckIcon />
+        </button>
+        <button onClick={handleUndo}>
+          Undo <UndoIcon />
+        </button>
+        <h1>Record</h1>
+        <h6>Begin recording </h6>
         {/* {renderRecordBox()} */}
-
-        <div className="box1">
-          <h2>
-            Recordings <span className="volumePic">{volumePic}</span>
-          </h2>
-          {/* {savedNotes.map((n) => (
+        <div className="box">
+          {savedNotes.map((n) => (
             <p key={n}>{n}</p>
-          ))} */}
-        </div>
-
-        <div className="box2">
-          <button onClick={() => setIsListening((isListening) => true)}>
-            Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
-          </button>
-          <button onClick={() => setIsListening((isListening) => false)}>
-            Stop <StopIcon />
-          </button>
-          <button onClick={handleSaveNote} disabled={!note}>
-            Done <CheckIcon />
-          </button>
-          <button onClick={handleUndo}>
-            Undo <UndoIcon />
-          </button>
+          ))}
         </div>
         <div className="recordingNotes">{note}</div>
         <form className="stt-form">
@@ -171,7 +164,7 @@ function SpeechToText() {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

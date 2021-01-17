@@ -26,6 +26,14 @@ export const createTrans = async (req, res) => {
   }
 };
 
-export const updateTrans = () => {};
+export const deleteTrans = async (req, res) => {
+  const { id: id } = req.params;
+  if (!mongoose.Types.ObjectId.isValid(id)) {
+    res.status(404).send("no transaction with that id");
+  }
+  await Transaction.findByIdAndDelete(id);
 
-export const deleteTrans = () => {};
+  res.json({ message: "Transaction deleted successfully" });
+};
+
+export const updateTrans = () => {};

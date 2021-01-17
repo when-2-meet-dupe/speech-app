@@ -123,19 +123,20 @@ function SpeechToText() {
           <button onClick={handleSaveNote} disabled={!note}>
             Done <CheckIcon />
           </button>
-          <p>{note}</p>
         </div>
         <div className="box">
           <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
-          {savedNotes.map((n) => (
+          {/* {savedNotes.map((n) => (
             <p key={n}>{n}</p>
-          ))}
+          ))} */}
         </div>
+        <div className="recordingNotes">{note}</div>
         <form className="stt-form">
           <div className="curr-amount">${amount}</div>
           <div className="curr-type">${type}</div>
           <div className="curr-cat">${category}</div>
           <div>
+            <div className="submitRecordingHolder">
             <button // Input for the submit button
               type="submit"
               value="Submit"
@@ -143,6 +144,7 @@ function SpeechToText() {
             >
               Submit
             </button>
+            </div>
           </div>
         </form>
       </div>

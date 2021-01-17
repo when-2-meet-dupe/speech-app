@@ -201,4 +201,36 @@ table {
   margin-left: 1rem;
 }
 
+.recordingNotes {
+  padding: 0.8rem;
+  margin: 0.5rem;
+  margin-top: -1.2rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  max-width: 40rem;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+}
+
+.submitRecordingHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.submitRecordingHolder button {
+  border: none;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: white;
+  background: black;
+  border-radius: 1.6rem;
+  transition: 0.25s;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+}
+
+.submitRecordingHolder button:hover {
+  background: var(--green);
+  color: white;
+  filter: drop-shadow(0rem 0rem 0.2rem black);
+}
+
 /**/

@@ -1,4 +1,3 @@
-import "./App.css";
 import Nav from "./global/Nav";
 import SpeechToText from "./STT/SpeechToText";
 import { About, Landing, Transactions } from "./pages/index";

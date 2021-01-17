@@ -1,6 +1,4 @@
-import "../App.css";
-
-export default function Transactions() {
+function Transactions() {
   return (
     <div className="App-header">
       <h1 className="insightsTitle">Insights</h1>
@@ -55,3 +53,5 @@ export default function Transactions() {
     </div>
   );
 }
+
+export default Transactions;

@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Button, Card, IconButton } from "@material-ui/core";
 import StopIcon from "@material-ui/icons/Stop";
 import CheckIcon from "@material-ui/icons/Check";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
-import { useDispatch, useSelector } from "react-redux";
-// import VolumeOnIcon from "@material-ui/icons/VolumeUp";
-// import VolumeOffIcon from "@material-ui/icons/VolumeOff";
+import { useDispatch } from "react-redux";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -30,6 +27,7 @@ function SpeechToText() {
 
   useEffect(() => {
     handleListen();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isListening]);
 
   const handleListen = () => {
@@ -97,22 +95,34 @@ function SpeechToText() {
     dispatch(createTransaction(data));
   };
 
-  // const [volumePic, setVolumePic] = useState();
   let volumePic = <i class="fas fa-volume-mute"></i>;
 
   if (isListening) {
-    // setVolumePic(<i class="fas fa-volume-up"></i>)
-    // setVolumePic(<VolumeOffIcon />);
     volumePic = <i class="fas fa-volume-up"></i>;
   } else {
-    // setVolumePic(<i class="fas fa-volume-mute"></i>)
-    // setVolumePic(<VolumeOnIcon />);
     volumePic = <i class="fas fa-volume-mute"></i>;
   }
+  // const renderRecordBox = () => (
+  //   <div className="box">
+  //     <button onClick={() => setIsListening((isListening) => true)}>
+  //       <FiberManualRecordIcon fontSize="medium" color="secondary" />
+  //     </button>
+  //     <button onClick={() => setIsListening((isListening) => false)}>
+  //       <StopIcon />
+  //     </button>
+  //     <button onClick={handleSaveNote} disabled={!note}>
+  //       <CheckIcon />
+  //     </button>
+  //     <p>{note}</p>
+  //   </div>
+  // );
 
   return (
     <>
       <div className="container">
+        {/* <h1>Record</h1> */}
+        {/* <h6>Begin recording </h6> */}
+        {/* {renderRecordBox()} */}
         <div className="box">
           <button onClick={() => setIsListening((isListening) => true)}>
            Start <FiberManualRecordIcon fontSize="medium" color="secondary" />

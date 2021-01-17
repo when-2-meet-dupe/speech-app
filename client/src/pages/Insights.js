@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "../App.css";
 import Chart from "react-google-charts";
 
-export default function Insights() {
+function Insights() {
   // configure these lists with database info
   let incomesList = [
     "Housing",
@@ -12,7 +12,7 @@ export default function Insights() {
     "Clothing",
     "$1",
     "Business",
-    "$4",
+    "$4"
   ];
   let expensesList = [
     "Investment",
@@ -22,7 +22,7 @@ export default function Insights() {
     "Deposit",
     "$1",
     "Business",
-    "$4",
+    "$4"
   ];
 
   const [incomes, setIncomes] = useState(incomesList);
@@ -43,15 +43,17 @@ export default function Insights() {
           ["Eat", 2],
           ["Commute", 2],
           ["Watch TV", 2],
-          ["Sleep", 7],
+          ["Sleep", 7]
         ]}
         options={{
           title: "My Daily Activities",
           // Just add this option
-          is3D: true,
+          is3D: true
         }}
         rootProps={{ "data-testid": "2" }}
       />
     </>
   );
 }
+
+export default Insights;

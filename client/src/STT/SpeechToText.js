@@ -95,49 +95,60 @@ function SpeechToText() {
     dispatch(createTransaction(data));
   };
 
-  // const [volumePic, setVolumePic] = useState();
   let volumePic = <i class="fas fa-volume-mute"></i>;
 
   if (isListening) {
-    // setVolumePic(<i class="fas fa-volume-up"></i>)
-    // setVolumePic(<VolumeOffIcon />);
     volumePic = <i class="fas fa-volume-up"></i>;
   } else {
-    // setVolumePic(<i class="fas fa-volume-mute"></i>)
-    // setVolumePic(<VolumeOnIcon />);
     volumePic = <i class="fas fa-volume-mute"></i>;
   }
-  const renderRecordBox = () => (
-    <div className="box">
-      <button onClick={() => setIsListening((isListening) => true)}>
-        <FiberManualRecordIcon fontSize="medium" color="secondary" />
-      </button>
-      <button onClick={() => setIsListening((isListening) => false)}>
-        <StopIcon />
-      </button>
-      <button onClick={handleSaveNote} disabled={!note}>
-        <CheckIcon />
-      </button>
-      <p>{note}</p>
-    </div>
-  );
+  // const renderRecordBox = () => (
+  //   <div className="box">
+  //     <button onClick={() => setIsListening((isListening) => true)}>
+  //       <FiberManualRecordIcon fontSize="medium" color="secondary" />
+  //     </button>
+  //     <button onClick={() => setIsListening((isListening) => false)}>
+  //       <StopIcon />
+  //     </button>
+  //     <button onClick={handleSaveNote} disabled={!note}>
+  //       <CheckIcon />
+  //     </button>
+  //     <p>{note}</p>
+  //   </div>
+  // );
 
   return (
     <>
       <div className="container">
-        <h1>Record</h1>
-        <h6>Begin recording </h6>
-        {renderRecordBox()}
-        <div className="box">
-          {savedNotes.map((n) => (
+        {/* <h1>Record</h1> */}
+        {/* <h6>Begin recording </h6> */}
+        {/* {renderRecordBox()} */}
+
+        <div className="box1">
+          <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
+          {/* {savedNotes.map((n) => (
             <p key={n}>{n}</p>
-          ))}
+          ))} */}
         </div>
+
+        <div className="box2">
+          <button onClick={() => setIsListening((isListening) => true)}>
+           Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
+          </button>
+          <button onClick={() => setIsListening((isListening) => false)}>
+            Stop <StopIcon />
+          </button>
+          <button onClick={handleSaveNote} disabled={!note}>
+            Done <CheckIcon />
+          </button>
+        </div>
+        <div className="recordingNotes">{note}</div>
         <form className="stt-form">
           <div className="curr-amount">${amount}</div>
           <div className="curr-type">${type}</div>
           <div className="curr-cat">${category}</div>
           <div>
+            <div className="submitRecordingHolder">
             <button // Input for the submit button
               type="submit"
               value="Submit"
@@ -145,6 +156,7 @@ function SpeechToText() {
             >
               Submit
             </button>
+            </div>
           </div>
         </form>
       </div>

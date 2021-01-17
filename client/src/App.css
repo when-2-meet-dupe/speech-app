@@ -129,34 +129,69 @@ table {
 
 /* RECORDING */
 
-.box {
+.box1,
+.box2 {
   display: flex;
   justify-content: center;
   flex-direction: row;
 }
 
-.box button {
+.box2 button {
   color: white;
   display: inline-flex;
   justify-content: center;
   width: 5rem;
   height: 5rem;
   margin: 0.5rem;
-  margin-bottom: -2rem;
+  margin-bottom: 3rem;
+  margin-top: 0rem;
   background: rgba(255, 255, 255, 0.25);
   border: none;
   filter: drop-shadow(0rem 0rem 0.1rem black);
+  border-radius: 1rem;
   transition: 0.1s;
   text-align: center;
   align-items: center;
 }
 
-.box button:hover {
+.box2 button:hover {
   background: var(--green);
 }
 
 .volumePic {
   margin-left: 1rem;
+}
+
+.recordingNotes {
+  padding: 0.8rem;
+  margin: 0.5rem;
+  margin-top: -1.2rem;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 1rem;
+  max-width: 40rem;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+}
+
+.submitRecordingHolder {
+  display: flex;
+  justify-content: center;
+}
+
+.submitRecordingHolder button {
+  border: none;
+  padding: 1rem;
+  font-size: 1.8rem;
+  color: white;
+  background: black;
+  border-radius: 1.6rem;
+  transition: 0.25s;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+}
+
+.submitRecordingHolder button:hover {
+  background: var(--green);
+  color: white;
+  filter: drop-shadow(0rem 0rem 0.2rem black);
 }
 
 /**/

@@ -14,30 +14,37 @@ const BackgroundImage = styled.div`
 `;
 
 const Container = styled.div`
-  margin-left: 12em;
+  margin-left: 8em;
 `;
 
 const Title = styled.h1`
-  font-size: 5em;
+  font-size: 3.5em;
   margin-top: 2em;
   margin-bottom: 10px;
 `;
 
 const PrimaryButton = styled(Button)`
   color: white !important;
-  font-size: 1.5em !important;
+  font-size: 1.2em !important;
   font-weight: 700 !important;
-  text-tranform: none !important;
   background-color: #00bfa6 !important;
+
+  .MuiButton-label {
+    text-tranform: none;
+  }
 `;
 
-const Landing = () => (
-  <BackgroundImage>
-    <Container>
-      <Title>Say Your Price</Title>
-      <PrimaryButton size="large">Get started</PrimaryButton>
-    </Container>
-  </BackgroundImage>
-);
+const Landing = () => {
+  return (
+    <BackgroundImage>
+      <Container>
+        <Title>Say Your Price</Title>
+        <PrimaryButton size="large" href="/home">
+          Get started
+        </PrimaryButton>
+      </Container>
+    </BackgroundImage>
+  );
+};
 
 export default Landing;

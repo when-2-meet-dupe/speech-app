@@ -194,4 +194,8 @@ table {
   filter: drop-shadow(0rem 0rem 0.2rem black);
 }
 
+.MuiButton-label {
+  text-transform: none;
+}
+
 /**/

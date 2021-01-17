@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import landing from "../assets/landing.svg";
 import { Button } from "@material-ui/core";
+import { Link } from "react-router-dom";
 
 const BackgroundImage = styled.div`
   height: 100%;
@@ -38,10 +39,10 @@ const Landing = () => {
   return (
     <BackgroundImage>
       <Container>
-        <Title>Say Your Price</Title>
-        <PrimaryButton size="large" href="/home">
-          Get started
-        </PrimaryButton>
+        <Title>Talk Money.</Title>
+        <Link className="navItem" to="/record">
+          <PrimaryButton size="large">Get started</PrimaryButton>
+        </Link>
       </Container>
     </BackgroundImage>
   );

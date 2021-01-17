@@ -80,6 +80,16 @@
   color: var(--green) !important;
 }
 
+.githubLogo {
+  font-size: 2rem;
+  color: white;
+  transition: 0.2s;
+}
+
+.githubLogo:hover {
+  color: var(--green);
+}
+
 /**/
 
 /* INSIGHTS PAGE */

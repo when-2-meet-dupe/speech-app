@@ -14,13 +14,6 @@ const LightTextField = styled(TextField)`
 const Income = () => {
   return (
     <Fragment>
-      <h2> Income</h2>
-      {fieldKeys.map((key) => {
-        return <LightTextField helperText={key} />;
-      })}
-      <Button variant="contained" color="primary">
-        Submit
-      </Button>
       <SpeechToText />
     </Fragment>
   );

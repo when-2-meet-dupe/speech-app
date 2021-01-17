@@ -11,7 +11,7 @@ function App() {
       <div className="App-header">
         <Nav />
         {/* <Income /> */}
-        <SpeechToText />
+        {/* <SpeechToText /> */}
       </div>
     </Router>
     // <div className="App-header">

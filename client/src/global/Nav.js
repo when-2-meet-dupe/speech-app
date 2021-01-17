@@ -11,7 +11,7 @@ function Nav() {
   return (
     <div className="sticky">
       <div className="navBar">
-        <Link className="navItem" to="/home" onClick={handleClick}>
+        <Link className="navItem" to="/record" onClick={handleClick}>
           Record
         </Link>
         <Link className="navItem" to="/about" onClick={handleClick}>

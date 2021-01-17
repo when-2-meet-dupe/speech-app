@@ -23,7 +23,7 @@ const Title = styled.h1`
   margin-bottom: 10px;
 `;
 
-const PrimaryButton = styled(Button)`
+export const PrimaryButton = styled(Button)`
   color: white !important;
   font-size: 1.2em !important;
   font-weight: 700 !important;

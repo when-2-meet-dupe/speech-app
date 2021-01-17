@@ -1,0 +1,47 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+a {
+    text-decoration: underline;
+}
+h1 {
+    margin: 0;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 3%;
+    font-size: 1.2rem;
+}
+
+.box {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.flex-left {
+    width: 100%;
+    margin-right: 50px;
+    text-align: left;
+}
+
+.icon {
+    float: right;
+    width: 40%;
+    height: auto;
+    margin-top: -20%;
+}
+
+form {
+    margin-top: 50px;
+}
+
+.submitButton {
+    padding-top: 50px;
+    font-size: 1.5rem;
+    width: 6rem;
+}
+

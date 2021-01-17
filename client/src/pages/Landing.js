@@ -38,7 +38,7 @@ const Landing = () => {
   return (
     <BackgroundImage>
       <Container>
-        <Title>Say Your Price</Title>
+        <Title>Talk Money.</Title>
         <PrimaryButton size="large" href="/home">
           Get started
         </PrimaryButton>

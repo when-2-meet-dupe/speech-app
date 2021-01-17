@@ -99,7 +99,6 @@
   position: relative;
   display: block;
   width: 33rem;
-  background: var(--grey);
   height: 40rem;
   border-radius: 1rem;
   filter: drop-shadow(0rem 0rem 0.1rem black);
@@ -118,6 +117,9 @@ td,
 th {
   border: 3px solid var(--grey);
   filter: drop-shadow(0rem 0rem 0.1rem black);
+  margin-left: -20px;
+  text-align: center;
+  margin-top: 20px;
 }
 
 table {

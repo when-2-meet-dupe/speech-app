@@ -126,7 +126,7 @@
 /* INSIGHTS PAGE */
 
 .insightsTitle {
-  margin-top: 2rem;
+  margin-top: calc(2rem+50vh);
   font-size: 3rem;
 }
 

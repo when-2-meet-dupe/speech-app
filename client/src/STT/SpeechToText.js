@@ -5,6 +5,8 @@ import CheckIcon from "@material-ui/icons/Check";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
 import { useDispatch, useSelector } from "react-redux";
+// import VolumeOnIcon from "@material-ui/icons/VolumeUp";
+// import VolumeOffIcon from "@material-ui/icons/VolumeOff";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -95,6 +97,19 @@ function SpeechToText() {
     dispatch(createTransaction(data));
   };
 
+  // const [volumePic, setVolumePic] = useState();
+  let volumePic = <i class="fas fa-volume-mute"></i>;
+
+  if (isListening) {
+    // setVolumePic(<i class="fas fa-volume-up"></i>)
+    // setVolumePic(<VolumeOffIcon />);
+    volumePic = <i class="fas fa-volume-up"></i>;
+  } else {
+    // setVolumePic(<i class="fas fa-volume-mute"></i>)
+    // setVolumePic(<VolumeOnIcon />);
+    volumePic = <i class="fas fa-volume-mute"></i>;
+  }
+
   return (
     <>
       <div className="container">
@@ -111,7 +126,7 @@ function SpeechToText() {
           <p>{note}</p>
         </div>
         <div className="box">
-          <h2>Recordings:</h2>
+          <h2>Recordings: <span className="volumePic">{volumePic}</span></h2>
           {savedNotes.map((n) => (
             <p key={n}>{n}</p>
           ))}

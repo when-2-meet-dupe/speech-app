@@ -1,3 +1,4 @@
+import "./App.css";
 import Nav from "./global/Nav";
 import { Home, About, Landing, Contact, Transactions } from "./pages/index";
 import { Route, Switch } from "react-router-dom";

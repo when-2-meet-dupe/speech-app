@@ -1,12 +1,9 @@
 import React, { useState, useEffect } from "react";
-import { TextField, Button, Card, IconButton } from "@material-ui/core";
 import StopIcon from "@material-ui/icons/Stop";
 import CheckIcon from "@material-ui/icons/Check";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
-import { useDispatch, useSelector } from "react-redux";
-// import VolumeOnIcon from "@material-ui/icons/VolumeUp";
-// import VolumeOffIcon from "@material-ui/icons/VolumeOff";
+import { useDispatch } from "react-redux";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -115,7 +112,7 @@ function SpeechToText() {
       <div className="container">
         <div className="box">
           <button onClick={() => setIsListening((isListening) => true)}>
-           Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
+            Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
           </button>
           <button onClick={() => setIsListening((isListening) => false)}>
             Stop <StopIcon />
@@ -126,7 +123,9 @@ function SpeechToText() {
           <p>{note}</p>
         </div>
         <div className="box">
-          <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
+          <h2>
+            Recordings <span className="volumePic">{volumePic}</span>
+          </h2>
           {savedNotes.map((n) => (
             <p key={n}>{n}</p>
           ))}

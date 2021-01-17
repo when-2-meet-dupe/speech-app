@@ -1,9 +1,9 @@
-import "../App.css";
-
-export default function About() {
+function About() {
   return (
     <div className="App-header">
-        <div>About</div>
+      <div>About</div>
     </div>
   );
 }
+
+export default About;

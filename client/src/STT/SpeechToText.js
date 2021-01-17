@@ -17,6 +17,11 @@ function SpeechToText() {
   const [note, setNote] = useState(null);
   const [savedNotes, setSavedNotes] = useState([]);
 
+  // TRACK TYPE, AMOUNT, CATEGORY OF TRANSACTION
+  const [type, setType] = useState("");
+  const [amount, setAmount] = useState("");
+  const [category, setCategory] = useState("");
+
   useEffect(() => {
     handleListen();
   }, [isListening]);
@@ -54,8 +59,30 @@ function SpeechToText() {
 
   const handleSaveNote = () => {
     // PASS NOTE TO SOME OTHER FUNCTION HERE?
+    parseExpense(note.split(" "));
     setSavedNotes([...savedNotes, note]);
     setNote("");
+  };
+
+  // array of words
+  // length 4 means it was negative
+  // length 3 means is was positive
+  // Ex: "$30 expense food"
+  // Ex: "- $30 expense food"
+  const parseExpense = (words) => {
+    if (words.length == 4) {
+      let temp = "-" + words[1].substring(1, words[1].length); // -30
+      let val = Number(temp);
+      setAmount(val);
+      setType(words[2]);
+      setCategory(words[3]);
+    } else {
+      let temp = words[0].substring(1, words[0].length); // 30
+      let val = Number(temp);
+      setAmount(temp);
+      setType(words[1]);
+      setCategory(words[2]);
+    }
   };
 
   return (

@@ -12,7 +12,6 @@ function App() {
         <Route exact component={Landing} path="/" />
         <Route exact component={SpeechToText} path="/home" />
         <Route exact component={About} path="/about" />
-        <Route exact component={Contact} path="/contact" />
         <Route exact component={Transactions} path="/transactions" />
         <Route exact component={Insights} path="/insights" />
       </Switch>

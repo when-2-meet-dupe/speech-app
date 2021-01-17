@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import StopIcon from "@material-ui/icons/Stop";
 import CheckIcon from "@material-ui/icons/Check";
+import UndoIcon from "@material-ui/icons/Undo";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
 import { useDispatch } from "react-redux";
@@ -96,12 +97,17 @@ function SpeechToText() {
     setSavedNotes("");
   };
 
-  let volumePic = <i class="fas fa-volume-mute"></i>;
+  const handleUndo = async (e) => {
+    e.preventDefault();
+    setNote("");
+  };
+
+  let volumePic = <i class="fas fa-microphone-slash"></i>;
 
   if (isListening) {
-    volumePic = <i class="fas fa-volume-up"></i>;
+    volumePic = <i class="fas fa-microphone"></i>;
   } else {
-    volumePic = <i class="fas fa-volume-mute"></i>;
+    volumePic = <i class="fas fa-microphone-slash"></i>;
   }
   // const renderRecordBox = () => (
   //   <div className="box">
@@ -143,6 +149,9 @@ function SpeechToText() {
           </button>
           <button onClick={handleSaveNote} disabled={!note}>
             Done <CheckIcon />
+          </button>
+          <button onClick={handleUndo}>
+            Undo <UndoIcon />
           </button>
         </div>
         <div className="recordingNotes">{note}</div>

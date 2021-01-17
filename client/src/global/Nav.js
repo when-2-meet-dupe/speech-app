@@ -17,9 +17,6 @@ function Nav() {
         <Link className="navItem" to="/about" onClick={handleClick}>
           About
         </Link>
-        <Link className="navItem" to="/contact" onClick={handleClick}>
-          Contact
-        </Link>
         <Link className="navItem" to="/transactions" onClick={handleClick}>
           Transactions
         </Link>

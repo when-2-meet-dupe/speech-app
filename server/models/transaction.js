@@ -1,8 +1,8 @@
 import mongoose from "mongoose";
 
 const transactionSchema = mongoose.Schema({
-  type: String,
   amount: Number,
+  type: String,
   category: String,
 });
 

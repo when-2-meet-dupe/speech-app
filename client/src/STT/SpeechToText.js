@@ -19,7 +19,7 @@ function SpeechToText() {
 
   // TRACK TYPE, AMOUNT, CATEGORY OF TRANSACTION
   const [type, setType] = useState("");
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState(0);
   const [category, setCategory] = useState("");
 
   useEffect(() => {
@@ -85,6 +85,16 @@ function SpeechToText() {
     }
   };
 
+  submitHandler = (e) => {
+    alert(`Recording Transaction: ${category}`)
+    axios.post('http://localhost:5000/something', ) 
+    .then(() => {
+      alert('POSTING COMPLETE'); 
+    })
+    .catch(() => {
+      alert('ERROR POSTING');
+    })
+
   return (
     <>
       <div className="container">
@@ -106,6 +116,17 @@ function SpeechToText() {
             <p key={n}>{n}</p>
           ))}
         </div>
+        <form className="stt-form" form onSubmit={this.submitHandler}>
+          <div className="curr-amount">${amount}</div>
+          <div className="curr-type">${type}</div>
+          <div className="curr-cat">${category}</div>
+          <div>
+            <button // Input for the submit button
+            type="submit" 
+            value="Submit"
+            >Submit</button>
+          </div>
+        </form>
       </div>
     </>
   );

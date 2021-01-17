@@ -10,7 +10,7 @@ function App() {
       <Nav />
       <Switch>
         <Route exact component={Landing} path="/" />
-        <Route exact component={SpeechToText} path="/home" />
+        <Route exact component={SpeechToText} path="/record" />
         <Route exact component={About} path="/about" />
         <Route exact component={Transactions} path="/transactions" />
       </Switch>

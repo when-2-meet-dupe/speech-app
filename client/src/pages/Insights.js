@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "../App.css";
+import Chart from "react-google-charts";
 
 export default function Insights() {
   // configure these lists with database info
@@ -29,30 +30,28 @@ export default function Insights() {
 
   const [tempNum, setTempNum] = useState(0);
 
-  // const renderIncomes = incomes.map((income) => {
-  //   console.log(incomes)
-  //   if (incomes.indexOf(income, tempNum) % 2 !== 0) {
-  //     console.log(income)
-  //     console.log(tempNum)
-  //     setTempNum(prev => prev + 1)
-  //     return (
-  //       <tr key={tempNum}>
-  //         <th>Category</th>
-  //         <th>Amount</th>
-  //       </tr>
-  //     )
-  //   }
-  // })
-
-  // console.log(renderIncomes)
-
-  // const renderIncomes = incomes.map((income) => {
-
-  // })
-
   return (
-    <div className="App-header">
-      <p>yo</p>
-    </div>
+    <>
+      <Chart
+        width={"500px"}
+        height={"300px"}
+        chartType="PieChart"
+        loader={<div>Loading Chart</div>}
+        data={[
+          ["Task", "Hours per Day"],
+          ["Work", 11],
+          ["Eat", 2],
+          ["Commute", 2],
+          ["Watch TV", 2],
+          ["Sleep", 7],
+        ]}
+        options={{
+          title: "My Daily Activities",
+          // Just add this option
+          is3D: true,
+        }}
+        rootProps={{ "data-testid": "2" }}
+      />
+    </>
   );
 }

@@ -7,6 +7,7 @@ import { Provider } from "react-redux";
 import { createStore, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk"; // allows for async requests with redux
 import reducers from "./reducers";
+import { BrowserRouter } from "react-router-dom";
 
 const store = createStore(
   reducers,
@@ -17,9 +18,11 @@ const store = createStore(
 ); // create a store with reducers
 
 ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>,
   document.getElementById("root")
 );
 

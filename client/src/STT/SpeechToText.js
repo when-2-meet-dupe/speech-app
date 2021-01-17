@@ -108,7 +108,9 @@ function SpeechToText() {
   const renderHeader = () => {
     return (
       <>
-        <h1>Record</h1>
+        <h1>
+          Record <span className="volumePic">{volumePic}</span>
+        </h1>
         <p>
           <Tooltip
             title="For example, you can say '$100 income business'."
@@ -134,7 +136,7 @@ function SpeechToText() {
         <CheckIcon />
       </button>
       <button onClick={handleUndo}>
-        Undo <UndoIcon />
+        <UndoIcon />
       </button>
       <p>{note}</p>
     </div>
@@ -161,9 +163,9 @@ function SpeechToText() {
 
   let volumePic = <i class="fas fa-volume-mute"></i>;
   if (isListening) {
-    volumePic = <i class="fas fa-volume-up"></i>;
+    volumePic = <i class="fas fa-microphone"></i>;
   } else {
-    volumePic = <i class="fas fa-volume-mute"></i>;
+    volumePic = <i class="fas fa-microphone-slash"></i>;
   }
 
   return (

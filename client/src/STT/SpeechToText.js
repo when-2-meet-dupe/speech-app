@@ -4,6 +4,7 @@ import StopIcon from "@material-ui/icons/Stop";
 import CheckIcon from "@material-ui/icons/Check";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
+import { useDispatch, useSelector } from "react-redux";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -14,6 +15,8 @@ mic.interimResults = true;
 mic.lang = "en-US";
 
 function SpeechToText() {
+  const dispatch = useDispatch();
+
   const [isListening, setIsListening] = useState(false);
   const [note, setNote] = useState(null);
   const [savedNotes, setSavedNotes] = useState([]);
@@ -86,6 +89,12 @@ function SpeechToText() {
     }
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    let data = { amount: amount, type: type, category: category };
+    dispatch(createTransaction(data));
+  };
+
   return (
     <>
       <div className="container">
@@ -115,6 +124,7 @@ function SpeechToText() {
             <button // Input for the submit button
               type="submit"
               value="Submit"
+              onClick={handleSubmit}
             >
               Submit
             </button>

@@ -79,6 +79,17 @@
   margin: 1rem;
 }
 
+.navBar li a {
+  color: white;
+  list-style: none;
+  text-decoration: none;
+  transition: 0.1s;
+}
+
+.navBar li a:hover {
+  color: var(--green);
+}
+
 .navBar .left {
   display: flex;
   flex-direction: row;
@@ -108,10 +119,6 @@
 .navBar li:last-child {
   right: 1rem;
   flex: 1;
-}
-
-.navBar .left li:hover {
-  color: var(--green);
 }
 
 /**/

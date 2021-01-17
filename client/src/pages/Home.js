@@ -24,5 +24,4 @@ const Income = () => {
   );
 };
 
-// export default Income;
-// Moved to home page in "pages" folder
+export default Income;

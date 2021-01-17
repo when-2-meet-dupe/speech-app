@@ -10,7 +10,7 @@ import {
 const router = express.Router();
 
 router.get("/", getTrans);
-router.get("/", createTrans);
+router.post("/", createTrans);
 router.patch("/:id", updateTrans);
 router.delete("/:id", deleteTrans);
 

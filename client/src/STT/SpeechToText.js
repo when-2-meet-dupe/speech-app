@@ -1,10 +1,14 @@
 import React, { useState, useEffect } from "react";
+import "../css/SpeechToText.css";
+import { useDispatch } from "react-redux";
 import StopIcon from "@material-ui/icons/Stop";
 import CheckIcon from "@material-ui/icons/Check";
 import UndoIcon from "@material-ui/icons/Undo";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
-import { useDispatch } from "react-redux";
+import { Tooltip } from "@material-ui/core";
+import { PrimaryButton } from "../pages/Landing";
+import speechToText from "../assets/speechToText.svg";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -69,13 +73,13 @@ function SpeechToText() {
     setNote("");
   };
 
-  // array of words
-  // length 4 means it was negative
-  // length 3 means is was positive
-  // Ex: "$30 expense food"
-  // Ex: "- $30 expense food"
   const parseExpense = (words) => {
-    if (words.length == 4) {
+    // array of words
+    // length 4 means it was negative
+    // length 3 means is was positive
+    // Ex: "$30 expense food"
+    // Ex: "- $30 expense food"
+    if (words.length === 4) {
       let temp = "-" + words[1].substring(1, words[1].length); // -30
       let val = Number(temp);
       setAmount(val);
@@ -101,13 +105,23 @@ function SpeechToText() {
     setNote("");
   };
 
-  let volumePic = <i class="fas fa-microphone-slash"></i>;
+  const renderHeader = () => {
+    return (
+      <>
+        <h1>Record</h1>
+        <p>
+          <Tooltip
+            title="For example, you can say '$100 income business'."
+            placement="top-start"
+          >
+            <a>Begin recording your income or expenses. </a>
+          </Tooltip>
+          Once you're done, press stop followed by the checkmark button.
+        </p>{" "}
+      </>
+    );
+  };
 
-  if (isListening) {
-    volumePic = <i class="fas fa-microphone"></i>;
-  } else {
-    volumePic = <i class="fas fa-microphone-slash"></i>;
-  }
   const renderRecordBox = () => (
     <div className="box">
       <button onClick={() => setIsListening((isListening) => true)}>
@@ -119,14 +133,42 @@ function SpeechToText() {
       <button onClick={handleSaveNote} disabled={!note}>
         <CheckIcon />
       </button>
+      <button onClick={handleUndo}>
+        Undo <UndoIcon />
+      </button>
       <p>{note}</p>
     </div>
   );
 
+  const renderForm = () => (
+    <form>
+      <div>
+        {savedNotes.map((n) => (
+          <p key={n}>{n}</p>
+        ))}
+      </div>
+      <div className="curr-amount">${amount}</div>
+      <div className="curr-type">${type}</div>
+      <div className="curr-cat">${category}</div>
+      <div className="submitButton">
+        <PrimaryButton value="Submit" onClick={handleSubmit}>
+          Submit
+        </PrimaryButton>
+      </div>
+    </form>
+  );
+
+  let volumePic = <i class="fas fa-volume-mute"></i>;
+  if (isListening) {
+    volumePic = <i class="fas fa-volume-up"></i>;
+  } else {
+    volumePic = <i class="fas fa-volume-mute"></i>;
+  }
+
   return (
     <div className="container">
       <div className="box2">
-        <button onClick={() => setIsListening((isListening) => true)}>
+        {/* <button onClick={() => setIsListening((isListening) => true)}>
           Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
         </button>
         <button onClick={() => setIsListening((isListening) => false)}>
@@ -139,9 +181,9 @@ function SpeechToText() {
           Undo <UndoIcon />
         </button>
         <h1>Record</h1>
-        <h6>Begin recording </h6>
+        <h6>Begin recording </h6> */}
         {/* {renderRecordBox()} */}
-        <div className="box">
+        {/* <div className="box">
           {savedNotes.map((n) => (
             <p key={n}>{n}</p>
           ))}
@@ -162,7 +204,13 @@ function SpeechToText() {
               </button>
             </div>
           </div>
-        </form>
+        </form> */}
+        <div className="flex-left">
+          {renderHeader()}
+          {renderRecordBox()}
+          {renderForm()}
+          <img alt="transfer money" className="icon" src={speechToText} />
+        </div>
       </div>
     </div>
   );

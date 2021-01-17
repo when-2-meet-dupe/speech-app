@@ -90,7 +90,7 @@ function Insights() {
             { key: "Business", data: expenseSums.business },
             { key: "Transportation", data: expenseSums.transportation }
           ]}
-          series={<PieArcSeries colorScheme="Accent" />}
+          series={<PieArcSeries colorScheme="Set2" />}
         />
       </Box>
     );
@@ -111,7 +111,7 @@ function Insights() {
             { key: "Deposit", data: incomeSums.deposit },
             { key: "Etransfer", data: incomeSums.etransfer }
           ]}
-          series={<PieArcSeries colorScheme="Accent" />}
+          series={<PieArcSeries colorScheme="Set2" />}
         />
       </Box>
     );
@@ -127,7 +127,7 @@ function Insights() {
             { key: "Income", data: typeSums.income },
             { key: "Expense", data: typeSums.expense }
           ]}
-          series={<PieArcSeries doughnut={true} colorScheme="Accent" />}
+          series={<PieArcSeries doughnut={true} colorScheme="Set2" />}
         />
       </>
     );

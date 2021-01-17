@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import StopIcon from "@material-ui/icons/Stop";
 import CheckIcon from "@material-ui/icons/Check";
+import UndoIcon from "@material-ui/icons/Undo";
 import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 import { createTransaction } from "../actions/transactions";
 import { useDispatch } from "react-redux";
@@ -95,6 +96,11 @@ function SpeechToText() {
     dispatch(createTransaction(data));
   };
 
+  const handleUndo = async (e) => {
+    e.preventDefault();
+    setNote("");
+  };
+
   let volumePic = <i class="fas fa-volume-mute"></i>;
 
   if (isListening) {
@@ -125,7 +131,9 @@ function SpeechToText() {
         {/* {renderRecordBox()} */}
 
         <div className="box1">
-          <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
+          <h2>
+            Recordings <span className="volumePic">{volumePic}</span>
+          </h2>
           {/* {savedNotes.map((n) => (
             <p key={n}>{n}</p>
           ))} */}
@@ -133,13 +141,16 @@ function SpeechToText() {
 
         <div className="box2">
           <button onClick={() => setIsListening((isListening) => true)}>
-           Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
+            Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
           </button>
           <button onClick={() => setIsListening((isListening) => false)}>
             Stop <StopIcon />
           </button>
           <button onClick={handleSaveNote} disabled={!note}>
             Done <CheckIcon />
+          </button>
+          <button onClick={handleUndo}>
+            Undo <UndoIcon />
           </button>
         </div>
         <div className="recordingNotes">{note}</div>
@@ -149,13 +160,13 @@ function SpeechToText() {
           <div className="curr-cat">${category}</div>
           <div>
             <div className="submitRecordingHolder">
-            <button // Input for the submit button
-              type="submit"
-              value="Submit"
-              onClick={handleSubmit}
-            >
-              Submit
-            </button>
+              <button // Input for the submit button
+                type="submit"
+                value="Submit"
+                onClick={handleSubmit}
+              >
+                Submit
+              </button>
             </div>
           </div>
         </form>

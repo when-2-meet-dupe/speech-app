@@ -83,7 +83,7 @@ function SpeechToText() {
     } else {
       let temp = words[0].substring(1, words[0].length); // 30
       let val = Number(temp);
-      setAmount(temp);
+      setAmount(val);
       setType(words[1]);
       setCategory(words[2]);
     }

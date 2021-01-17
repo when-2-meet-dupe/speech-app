@@ -115,18 +115,18 @@ function SpeechToText() {
       <div className="container">
         <div className="box">
           <button onClick={() => setIsListening((isListening) => true)}>
-            <FiberManualRecordIcon fontSize="medium" color="secondary" />
+           Start <FiberManualRecordIcon fontSize="medium" color="secondary" />
           </button>
           <button onClick={() => setIsListening((isListening) => false)}>
-            <StopIcon />
+            Stop <StopIcon />
           </button>
           <button onClick={handleSaveNote} disabled={!note}>
-            <CheckIcon />
+            Done <CheckIcon />
           </button>
           <p>{note}</p>
         </div>
         <div className="box">
-          <h2>Recordings: <span className="volumePic">{volumePic}</span></h2>
+          <h2>Recordings <span className="volumePic">{volumePic}</span></h2>
           {savedNotes.map((n) => (
             <p key={n}>{n}</p>
           ))}

@@ -168,3 +168,37 @@ table {
 }
 
 /**/
+
+/* RECORDING */
+
+.box {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.box button {
+  color: white;
+  display: inline-flex;
+  justify-content: center;
+  width: 5rem;
+  height: 5rem;
+  margin: 0.5rem;
+  margin-bottom: -2rem;
+  background: rgba(255, 255, 255, 0.25);
+  border: none;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+  transition: 0.1s;
+  text-align: center;
+  align-items: center;
+}
+
+.box button:hover {
+  background: var(--green);
+}
+
+.volumePic {
+  margin-left: 1rem;
+}
+
+/**/

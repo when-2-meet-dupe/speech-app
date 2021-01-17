@@ -86,14 +86,16 @@ function SpeechToText() {
   };
 
   submitHandler = (e) => {
-    alert(`Recording Transaction: ${category}`)
-    axios.post('http://localhost:5000/something', ) 
-    .then(() => {
-      alert('POSTING COMPLETE'); 
-    })
-    .catch(() => {
-      alert('ERROR POSTING');
-    })
+    alert(`Recording Transaction: ${category}`);
+    axios
+      .post("http://localhost:5000/something")
+      .then(() => {
+        alert("POSTING COMPLETE");
+      })
+      .catch(() => {
+        alert("ERROR POSTING");
+      });
+  };
 
   return (
     <>
@@ -122,9 +124,11 @@ function SpeechToText() {
           <div className="curr-cat">${category}</div>
           <div>
             <button // Input for the submit button
-            type="submit" 
-            value="Submit"
-            >Submit</button>
+              type="submit"
+              value="Submit"
+            >
+              Submit
+            </button>
           </div>
         </form>
       </div>

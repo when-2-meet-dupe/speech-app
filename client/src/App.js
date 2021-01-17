@@ -1,7 +1,6 @@
-import "./App.css";
 import Nav from "./global/Nav";
 import SpeechToText from "./STT/SpeechToText";
-import { About, Landing, Contact, Transactions, Insights } from "./pages/index";
+import { About, Landing, Transactions, Insights } from "./pages/index";
 import { Route, Switch } from "react-router-dom";
 
 function App() {

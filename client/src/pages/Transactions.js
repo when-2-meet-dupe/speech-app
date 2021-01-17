@@ -14,7 +14,6 @@ function Transactions() {
 
   return (
     <div className="App-header">
-      <h1 className="insightsTitle">Insights</h1>
       <div className="cards">
         <div className="card1">
           <h1>Transactions</h1>

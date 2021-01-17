@@ -23,6 +23,9 @@ function Nav() {
         <Link className="navItem" to="/transactions" onClick={handleClick}>
           Transactions
         </Link>
+        <Link className="navItem" to="/insights" onClick={handleClick}>
+          Insights
+        </Link>
       </div>
     </div>
   );

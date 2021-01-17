@@ -198,4 +198,8 @@ table {
   text-transform: none;
 }
 
+.recentNote {
+  max-width: 40rem;
+}
+
 /**/

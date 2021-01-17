@@ -24,6 +24,7 @@ function SpeechToText() {
   const [isListening, setIsListening] = useState(false);
   const [note, setNote] = useState(null);
   const [savedNotes, setSavedNotes] = useState([]);
+  const [mostRecentSavedNote, setMostRecentSavedNote] = useState([]);
 
   // TRACK TYPE, AMOUNT, CATEGORY OF TRANSACTION
   const [type, setType] = useState("");
@@ -69,6 +70,7 @@ function SpeechToText() {
   const handleSaveNote = () => {
     // PASS NOTE TO SOME OTHER FUNCTION HERE?
     parseExpense(note.split(" "));
+    setMostRecentSavedNote(note);
     setSavedNotes([...savedNotes, note]);
     setNote("");
   };
@@ -103,6 +105,7 @@ function SpeechToText() {
 
   const handleUndo = async (e) => {
     e.preventDefault();
+    setSavedNotes("");
     setNote("");
   };
 
@@ -139,18 +142,14 @@ function SpeechToText() {
       <button onClick={handleUndo}>
         <UndoIcon />
       </button>
-      <p>{note}</p>
+      <p className="recentNote">{note}</p>
     </div>
   );
 
   const renderForm = () => (
     <form>
       You said...
-      <div>
-        {savedNotes.map((n) => (
-          <p key={n}>{n}</p>
-        ))}
-      </div>
+      <div className="recentNote">{mostRecentSavedNote}</div>
       <div className="curr-amount">Amount: ${amount}</div>
       <div className="curr-type">Type: {type}</div>
       <div className="curr-cat">Category: {category}</div>

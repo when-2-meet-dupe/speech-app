@@ -122,3 +122,48 @@
 }
 
 /**/
+
+/* INSIGHTS PAGE */
+
+.insightsTitle {
+  margin-top: 2rem;
+  font-size: 3rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card1,
+.card2 {
+  position: relative;
+  display: block;
+  width: 33rem;
+  background: var(--grey);
+  height: 40rem;
+  border-radius: 1rem;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+  margin: 2rem;
+  margin-top: 0rem;
+}
+
+.cards h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 2.5rem;
+}
+
+table,
+td,
+th {
+  border: 3px solid var(--grey);
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/**/

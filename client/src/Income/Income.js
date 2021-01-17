@@ -23,27 +23,27 @@ const Income = () => {
       return <LightTextField helperText={key} />;
     });
 
-  const renderRecordCard = () => (
-    <RecordCard>
-      <IconButton>
-        <FiberManualRecordIcon fontSize="medium" color="secondary" />
-      </IconButton>
-      <IconButton>
-        <StopIcon />
-      </IconButton>
-      <TextField
-        id="outlined-basic"
-        placeholder="You said..."
-        variant="outlined"
-      />
-    </RecordCard>
-  );
+  // const renderRecordCard = () => (
+  //   <RecordCard>
+  //     <IconButton>
+  //       <FiberManualRecordIcon fontSize="medium" color="secondary" />
+  //     </IconButton>
+  //     <IconButton>
+  //       <StopIcon />
+  //     </IconButton>
+  //     <TextField
+  //       id="outlined-basic"
+  //       placeholder="You said..."
+  //       variant="outlined"
+  //     />
+  //   </RecordCard>
+  // );
 
   return (
     <Fragment>
       <h2> Income</h2>
       {renderFields()}
-      {renderRecordCard()}
+      {/* {renderRecordCard()} */}
       <Button variant="contained" color="primary">
         Submit
       </Button>

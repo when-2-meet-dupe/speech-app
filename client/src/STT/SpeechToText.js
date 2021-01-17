@@ -1,4 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { TextField, Button, Card, IconButton } from "@material-ui/core";
+import StopIcon from "@material-ui/icons/Stop";
+import CheckIcon from "@material-ui/icons/Check";
+import FiberManualRecordIcon from "@material-ui/icons/FiberManualRecord";
 
 const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -58,16 +62,19 @@ function SpeechToText() {
     <>
       <div className="container">
         <div className="box">
-          <button onClick={handleSaveNote} disabled={!note}>
-            Verify recording
+          <button onClick={() => setIsListening((isListening) => true)}>
+            <FiberManualRecordIcon fontSize="medium" color="secondary" />
           </button>
-          <button onClick={() => setIsListening((prevState) => !prevState)}>
-            Start/Stop
+          <button onClick={() => setIsListening((isListening) => false)}>
+            <StopIcon />
+          </button>
+          <button onClick={handleSaveNote} disabled={!note}>
+            <CheckIcon />
           </button>
           <p>{note}</p>
         </div>
         <div className="box">
-          <h2>Recodings:</h2>
+          <h2>Recordings:</h2>
           {savedNotes.map((n) => (
             <p key={n}>{n}</p>
           ))}

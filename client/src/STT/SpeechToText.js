@@ -120,6 +120,7 @@ function SpeechToText() {
             title="For example, you can say '$100 income business'."
             placement="left"
           >
+            {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
             <a>Begin recording your income or expenses.</a>
           </Tooltip>{" "}
           Once you're done, press stop followed by the checkmark button.

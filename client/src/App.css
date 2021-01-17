@@ -1,3 +1,8 @@
+:root {
+  --green: #28bfa7;
+  --grey: #282c34;
+}
+
 .App {
   text-align: center;
 }
@@ -36,3 +41,77 @@
     transform: rotate(360deg);
   }
 }
+
+/* NAV BAR */
+
+.sticky {
+  position: fixed;
+  top: 0;
+}
+
+.navBarContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.navBar {
+  display: flex;
+  background: var(--grey);
+  color: white;
+  width: 80rem;
+  border-radius: 0rem 0rem 1rem 1rem;
+  font-size: 1.4rem;
+  height: 4rem;
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+}
+
+.navBar ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  /* margin-left: 1rem; */
+  justify-content: space-around;
+  flex: 1;
+}
+
+.navBar li {
+  margin: 1rem;
+}
+
+.navBar .left {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+  transition: 0.25s;
+}
+
+.navBar .right {
+  margin-right: 1rem;
+}
+
+.navBar .right li {
+  background: var(--green);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  background: rgba(0, 0, 0, 0.247);
+  filter: drop-shadow(0rem 0rem 0.1rem black);
+  transition: 0.1s;
+}
+
+.navBar .right li:hover {
+  /* background: rgba(40, 191, 167, 0.247); */
+  color: var(--green);
+}
+
+.navBar li:last-child {
+  right: 1rem;
+  flex: 1;
+}
+
+.navBar .left li:hover {
+  color: var(--green);
+}
+
+/**/

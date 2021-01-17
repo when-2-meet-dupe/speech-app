@@ -101,12 +101,12 @@ function SpeechToText() {
     setNote("");
   };
 
-  let volumePic = <i class="fas fa-volume-mute"></i>;
+  let volumePic = <i class="fas fa-microphone-slash"></i>;
 
   if (isListening) {
-    volumePic = <i class="fas fa-volume-up"></i>;
+    volumePic = <i class="fas fa-microphone"></i>;
   } else {
-    volumePic = <i class="fas fa-volume-mute"></i>;
+    volumePic = <i class="fas fa-microphone-slash"></i>;
   }
   // const renderRecordBox = () => (
   //   <div className="box">
